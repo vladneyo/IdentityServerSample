@@ -1,3 +1,6 @@
 .vs/
 IdentityServerSample.Host/bin
 IdentityServerSample.Host/obj
+IdentityServerSample.MVCApp/bin/
+IdentityServerSample.MVCApp/obj/
+IdentityServerSample.MVCApp/wwwroot/lib/
