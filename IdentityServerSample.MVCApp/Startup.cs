@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.IdentityModel.Tokens.Jwt;
 using System.Linq;
 using System.Threading.Tasks;
+using IdentityServerSample.Shared.Constants;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.DataProtection;
 using Microsoft.AspNetCore.Hosting;
@@ -36,9 +37,9 @@ namespace IdentityServerSample.MVCApp
                 .AddOpenIdConnect("oidc", options =>
                 {
                     options.SignInScheme = "Cookies";
-                    options.Authority = "http://localhost:52862/";
+                    options.Authority = EndpointsConstants.ISHost;
                     options.RequireHttpsMetadata = false;
-                    options.ClientId = "mvc";
+                    options.ClientId = ISClients.MVCClientId;
                     options.SaveTokens = true;
                 });
         }
