@@ -10,7 +10,7 @@ IndentityServerSample.Host/wwwroot/lib/
 IdentityServerSample.Host/wwwroot/lib
 IdentityServerSample.WebAPIApp/bin
 IdentityServerSample.WebAPIApp/obj
-IdentityServerSample.WebAPIApp.ResourceOwner/bin/
-IdentityServerSample.WebAPIApp.ResourceOwner/obj/
+IdentityServerSample.WebAPIApp.Client/bin/
+IdentityServerSample.WebAPIApp.Client/obj/
 IdentityServerSample.Shared/obj/
 IdentityServerSample.Shared/bin/

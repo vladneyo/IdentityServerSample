@@ -5,7 +5,7 @@ using IdentityModel.Client;
 using IdentityServerSample.Shared.Constants;
 using Newtonsoft.Json.Linq;
 
-namespace IdentityServerSample.WebAPIApp.ResourceOwner
+namespace IdentityServerSample.WebAPIApp.Client
 {
     class Program
     {

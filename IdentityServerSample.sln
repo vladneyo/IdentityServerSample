@@ -9,7 +9,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "IdentityServerSample.Host",
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "IdentityServerSample.WebAPIApp", "IdentityServerSample.WebAPIApp\IdentityServerSample.WebAPIApp.csproj", "{23EA22F2-77AA-4C31-B0FE-E8B4276128C4}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "IdentityServerSample.WebAPIApp.ResourceOwner", "IdentityServerSample.WebAPIApp.ResourceOwner\IdentityServerSample.WebAPIApp.ResourceOwner.csproj", "{DC4DF922-834C-4133-85D5-3E31E5F7FBBD}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "IdentityServerSample.WebAPIApp.Client", "IdentityServerSample.WebAPIApp.Client\IdentityServerSample.WebAPIApp.Client.csproj", "{DC4DF922-834C-4133-85D5-3E31E5F7FBBD}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IdentityServerSample.Shared", "IdentityServerSample.Shared\IdentityServerSample.Shared.csproj", "{31D17798-EA9D-41B1-881D-795679782EE4}"
 EndProject
