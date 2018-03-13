@@ -27,8 +27,8 @@ namespace IdentityServerSample.BookingAPI.TestClient
             }
 
             // request token
-            var tokenClient = new TokenClient(disco.TokenEndpoint, ISClients.WebAPIClientId, "secret");
-            var tokenResponse = await tokenClient.RequestClientCredentialsAsync(ISApiNames.Api1);
+            var tokenClient = new TokenClient(disco.TokenEndpoint, ISClients.BookingAPIClientId, "secret");
+            var tokenResponse = await tokenClient.RequestClientCredentialsAsync(ISApiNames.BookingAPI);
 
             if (tokenResponse.IsError)
             {
@@ -44,7 +44,7 @@ namespace IdentityServerSample.BookingAPI.TestClient
             var client = new HttpClient();
             client.SetBearerToken(tokenResponse.AccessToken);
 
-            var response = await client.GetAsync($"{EndpointsConstants.WebAPIApp}/api/values/");
+            var response = await client.GetAsync($"{EndpointsConstants.BookingAPI}/api/values/");
             if (!response.IsSuccessStatusCode)
             {
                 Console.WriteLine(response.StatusCode);

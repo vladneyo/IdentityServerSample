@@ -6,7 +6,7 @@ namespace IdentityServerSample.Shared.Constants
 {
     public static class ISClients
     {
-        public static readonly string MVCClientId = "mvc";
-        public static readonly string WebAPIClientId = "api1_client";
+        public static readonly string BookingAdminPanelClientId = "booking_admin_panel";
+        public static readonly string BookingAPIClientId = "booking_api_client";
     }
 }

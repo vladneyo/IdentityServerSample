@@ -16,20 +16,20 @@ namespace IdentityServerSample.IdentityServerHost
                 new Client
                 {
                     AccessTokenType = AccessTokenType.Jwt,
-                    ClientId = ISClients.MVCClientId,
-                    RedirectUris = new string[]{ $"{EndpointsConstants.MVCApp}/signin-oidc" },
-                    PostLogoutRedirectUris = { $"{EndpointsConstants.MVCApp}/signout-callback-oidc" },
+                    ClientId = ISClients.BookingAdminPanelClientId,
+                    RedirectUris = new string[]{ $"{EndpointsConstants.BookingAdminPanel}/signin-oidc" },
+                    PostLogoutRedirectUris = { $"{EndpointsConstants.BookingAdminPanel}/signout-callback-oidc" },
                     ClientName = "mvc",
                     AllowedGrantTypes = GrantTypes.Implicit,
                     AllowedScopes = { StandardScopes.Email, StandardScopes.Profile, StandardScopes.OpenId }
                 },
                 new Client
                 {
-                    ClientId = ISClients.WebAPIClientId,
+                    ClientId = ISClients.BookingAPIClientId,
                     AllowedGrantTypes = GrantTypes.ClientCredentials,
-                    ClientSecrets = { new Secret("secret".Sha256())},
+                    ClientSecrets = { new Secret(Secrets.BookingAPI.Sha256())},
                     RequireClientSecret = false,
-                    AllowedScopes = { ISApiNames.Api1, StandardScopes.Email, StandardScopes.Profile, StandardScopes.OpenId }
+                    AllowedScopes = { ISApiNames.BookingAPI, StandardScopes.Email, StandardScopes.Profile, StandardScopes.OpenId }
                 }
             };
         }
@@ -38,7 +38,7 @@ namespace IdentityServerSample.IdentityServerHost
         {
             return new List<ApiResource>
             {
-                new ApiResource(ISApiNames.Api1, "WebAPI App")
+                new ApiResource(ISApiNames.BookingAPI, "WebAPI App")
             };
         }
 

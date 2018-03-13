@@ -13,6 +13,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "IdentityServerSample.Bookin
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "IdentityServerSample.Shared", "IdentityServerSample.Shared\IdentityServerSample.Shared.csproj", "{31D17798-EA9D-41B1-881D-795679782EE4}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IdentityServerSample.BookingAPI.Client", "IdentityServerSample.BookingAPI.Client\IdentityServerSample.BookingAPI.Client.csproj", "{8AE0BBD7-8A91-41EF-A0AB-52DD0C75F14B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +41,10 @@ Global
 		{31D17798-EA9D-41B1-881D-795679782EE4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{31D17798-EA9D-41B1-881D-795679782EE4}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{31D17798-EA9D-41B1-881D-795679782EE4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8AE0BBD7-8A91-41EF-A0AB-52DD0C75F14B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8AE0BBD7-8A91-41EF-A0AB-52DD0C75F14B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8AE0BBD7-8A91-41EF-A0AB-52DD0C75F14B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8AE0BBD7-8A91-41EF-A0AB-52DD0C75F14B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

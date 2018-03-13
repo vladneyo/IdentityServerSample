@@ -12,6 +12,7 @@ using System.Net.Http;
 using IdentityServerSample.Shared.Constants;
 using IdentityModel.Client;
 using Newtonsoft.Json.Linq;
+using IdentityServerSample.BookingAPI.Client;
 
 namespace IdentityServerSample.BookingAdminPanel.Controllers
 {
@@ -30,43 +31,14 @@ namespace IdentityServerSample.BookingAdminPanel.Controllers
             return View();
         }
 
+        [Authorize]
         public async Task<IActionResult> Contact()
         {
             ViewData["Message"] = "Your contact page.";
 
-            var disco = await DiscoveryClient.GetAsync(EndpointsConstants.ISHost);
-            if (disco.IsError)
-            {
-                ViewData["APIData"] = "DiscoveryClient error<br>";
-                ViewData["APIData"] += disco.Error;
-                return View();
-            }
+            BookingClient<string> client = new BookingClient<string>();
 
-            // request token
-            var tokenClient = new TokenClient(disco.TokenEndpoint, ISClients.WebAPIClientId, "secret");
-            var tokenResponse = await tokenClient.RequestClientCredentialsAsync(ISApiNames.Api1);
-
-            if (tokenResponse.IsError)
-            {
-                ViewData["APIData"] = "tokenResponse error";
-                ViewData["APIData"] += tokenResponse.Error;
-                return View();
-            }
-
-            // call api
-            var client = new HttpClient();
-            client.SetBearerToken(tokenResponse.AccessToken);
-
-            var response = await client.GetAsync($"{EndpointsConstants.WebAPIApp}/api/values/");
-            if (!response.IsSuccessStatusCode)
-            {
-                ViewData["APIData"] = response.StatusCode;
-            }
-            else
-            {
-                var content = response.Content.ReadAsStringAsync().Result;
-                ViewData["APIData"] = JArray.Parse(content);
-            }
+            ViewData["APIData"] = await client.GetAsync("values");
 
             return View();
         }

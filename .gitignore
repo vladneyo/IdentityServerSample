@@ -15,3 +15,5 @@ IdentityServerSample.BookingAPI.TestClient/obj/
 
 IdentityServerSample.Shared/obj/
 IdentityServerSample.Shared/bin/
+IdentityServerSample.BookingAPI.Client/obj/
+IdentityServerSample.BookingAPI.Client/bin/

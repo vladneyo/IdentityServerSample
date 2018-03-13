@@ -39,7 +39,7 @@ namespace IdentityServerSample.BookingAdminPanel
                     options.SignInScheme = "Cookies";
                     options.Authority = EndpointsConstants.ISHost;
                     options.RequireHttpsMetadata = false;
-                    options.ClientId = ISClients.MVCClientId;
+                    options.ClientId = ISClients.BookingAdminPanelClientId;
                     options.SaveTokens = true;
                 });
         }

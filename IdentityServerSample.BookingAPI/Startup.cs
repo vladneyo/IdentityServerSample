@@ -27,7 +27,7 @@ namespace IdentityServerSample.BookingAPI
                 {
                     options.Authority = EndpointsConstants.ISHost;
                     options.RequireHttpsMetadata = false;
-                    options.Audience = ISApiNames.Api1;
+                    options.Audience = ISApiNames.BookingAPI;
                 });
         }
 

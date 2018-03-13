@@ -4,8 +4,8 @@ using System.Text;
 
 namespace IdentityServerSample.Shared.Constants
 {
-    public static class ISApiNames
+    public static class Secrets
     {
-        public static readonly string BookingAPI = "booking_api";
+        public static readonly string BookingAPI = "secret";
     }
 }
