@@ -17,3 +17,13 @@ IdentityServerSample.Shared/obj/
 IdentityServerSample.Shared/bin/
 IdentityServerSample.BookingAPI.Client/obj/
 IdentityServerSample.BookingAPI.Client/bin/
+IdentityServerSample.BookingAPI.Business.Contracts/bin/
+IdentityServerSample.BookingAPI.Business.Contracts/obj/
+IdentityServerSample.BookingAPI.Business/bin/
+IdentityServerSample.BookingAPI.Business/obj/
+IdentityServerSample.BookingAPI.Data.Contracts/bin/
+IdentityServerSample.BookingAPI.Data.Contracts/obj/
+IdentityServerSample.BookingAPI.Data/bin/
+IdentityServerSample.BookingAPI.Data/obj/
+IdentityServerSample.BookingAPI.EDM/bin/
+IdentityServerSample.BookingAPI.EDM/obj/

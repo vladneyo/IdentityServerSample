@@ -1,17 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Diagnostics;
-using System.Linq;
+﻿using System.Diagnostics;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using IdentityServerSample.BookingAdminPanel.Models;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Authentication;
-using System.Net;
-using System.Net.Http;
-using IdentityServerSample.Shared.Constants;
-using IdentityModel.Client;
-using Newtonsoft.Json.Linq;
 using IdentityServerSample.BookingAPI.Client;
 
 namespace IdentityServerSample.BookingAdminPanel.Controllers

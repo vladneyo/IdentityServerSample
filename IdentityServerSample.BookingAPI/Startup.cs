@@ -1,9 +1,14 @@
-﻿using IdentityServerSample.Shared.Constants;
+﻿using System;
+using AutoMapper;
+using IdentityServerSample.BookingAPI.EDM;
+using IdentityServerSample.Shared.Constants;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using StructureMap;
 
 namespace IdentityServerSample.BookingAPI
 {
@@ -16,7 +21,7 @@ namespace IdentityServerSample.BookingAPI
 
         public IConfiguration Configuration { get; }
 
-        public void ConfigureServices(IServiceCollection services)
+        public IServiceProvider ConfigureServices(IServiceCollection services)
         {
             services.AddMvcCore()
                 .AddAuthorization()
@@ -29,6 +34,30 @@ namespace IdentityServerSample.BookingAPI
                     options.RequireHttpsMetadata = false;
                     options.Audience = ISApiNames.BookingAPI;
                 });
+
+            services.AddAutoMapper();
+
+            services.AddDbContext<BookingContext>(option =>
+            {
+                option.UseSqlServer(Configuration.GetConnectionString("BookingAPIDb"));
+            });
+
+            var container = new Container();
+
+            container.Configure(config =>
+            {
+                config.Scan(scan =>
+                {
+                    scan.AssembliesAndExecutablesFromApplicationBaseDirectory();
+                    scan.TheCallingAssembly();
+                    scan.LookForRegistries();
+                    scan.WithDefaultConventions();
+                });
+
+                config.Populate(services);
+            });
+
+            return container.GetInstance<IServiceProvider>();
         }
 
         public void Configure(IApplicationBuilder app, IHostingEnvironment env)

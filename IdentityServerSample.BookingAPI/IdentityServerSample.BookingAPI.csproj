@@ -9,8 +9,12 @@
   </ItemGroup>
 
   <ItemGroup>
+    <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="3.2.0" />
     <PackageReference Include="Microsoft.AspNetCore.All" Version="2.0.5" />
     <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="2.0.1" />
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="2.0.2" />
+    <PackageReference Include="StructureMap.AspNetCore" Version="1.4.0" />
+    <PackageReference Include="StructureMap.Microsoft.DependencyInjection" Version="1.4.0" />
   </ItemGroup>
 
   <ItemGroup>
@@ -18,6 +22,11 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\IdentityServerSample.BookingAPI.Business.Contracts\IdentityServerSample.BookingAPI.Business.Contracts.csproj" />
+    <ProjectReference Include="..\IdentityServerSample.BookingAPI.Business\IdentityServerSample.BookingAPI.Business.csproj" />
+    <ProjectReference Include="..\IdentityServerSample.BookingAPI.Data.Contracts\IdentityServerSample.BookingAPI.Data.Contracts.csproj" />
+    <ProjectReference Include="..\IdentityServerSample.BookingAPI.Data\IdentityServerSample.BookingAPI.Data.csproj" />
+    <ProjectReference Include="..\IdentityServerSample.BookingAPI.EDM\IdentityServerSample.BookingAPI.EDM.csproj" />
     <ProjectReference Include="..\IdentityServerSample.Shared\IdentityServerSample.Shared.csproj" />
   </ItemGroup>
 
