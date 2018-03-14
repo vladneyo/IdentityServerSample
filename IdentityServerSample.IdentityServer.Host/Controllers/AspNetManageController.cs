@@ -18,7 +18,7 @@ namespace IdentityServerSample.IdentityServer.Host.Controllers
 {
     [Authorize]
     [Route("[controller]/[action]")]
-    public class ManageController : Controller
+    public class AspNetManageController : Controller
     {
         private readonly UserManager<ApplicationUser> _userManager;
         private readonly SignInManager<ApplicationUser> _signInManager;
@@ -29,11 +29,11 @@ namespace IdentityServerSample.IdentityServer.Host.Controllers
         private const string AuthenticatorUriFormat = "otpauth://totp/{0}:{1}?secret={2}&issuer={0}&digits=6";
         private const string RecoveryCodesKey = nameof(RecoveryCodesKey);
 
-        public ManageController(
+        public AspNetManageController(
           UserManager<ApplicationUser> userManager,
           SignInManager<ApplicationUser> signInManager,
           IEmailSender emailSender,
-          ILogger<ManageController> logger,
+          ILogger<AspNetManageController> logger,
           UrlEncoder urlEncoder)
         {
             _userManager = userManager;

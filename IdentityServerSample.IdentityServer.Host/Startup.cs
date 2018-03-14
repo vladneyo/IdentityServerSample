@@ -1,4 +1,5 @@
-﻿using IdentityServerSample.IdentityServer.Host.Data;
+﻿using IdentityServer4.EntityFramework.DbContexts;
+using IdentityServerSample.IdentityServer.Host.Data;
 using IdentityServerSample.IdentityServer.Host.Models;
 using IdentityServerSample.IdentityServer.Host.Services;
 using Microsoft.AspNetCore.Builder;
@@ -47,9 +48,6 @@ namespace IdentityServerSample.IdentityServer.Host
                         options.Events.RaiseFailureEvents = true;
                         options.Events.RaiseSuccessEvents = true;
                     })
-                //.AddInMemoryIdentityResources(Config.GetIdentityResources())
-                //.AddInMemoryApiResources(Config.GetApiResources())
-                //.AddInMemoryClients(Config.GetClients())
                 .AddConfigurationStore(options =>
                 {
                     options.ConfigureDbContext = b =>
@@ -62,7 +60,6 @@ namespace IdentityServerSample.IdentityServer.Host
                         b.UseSqlServer(connectionString,
                             sql => sql.MigrationsAssembly(migrationsAssembly));
 
-                    // this enables automatic token cleanup. this is optional.
                     options.EnableTokenCleanup = true;
                     options.TokenCleanupInterval = 30;
                 })
@@ -90,6 +87,18 @@ namespace IdentityServerSample.IdentityServer.Host
             {
                 app.UseExceptionHandler("/Home/Error");
             }
+
+            using (var scope = app.ApplicationServices.CreateScope())
+            {
+                using (var ctx = scope.ServiceProvider.GetService<ApplicationDbContext>())
+                {
+                    ctx.Database.EnsureCreated();
+                }
+                using (var ctx = scope.ServiceProvider.GetService<ConfigurationDbContext>())
+                {
+                    ctx.Database.Migrate();
+                }
+            }            
 
             app.UseStaticFiles();
             app.UseIdentityServer();

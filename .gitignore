@@ -27,3 +27,4 @@ IdentityServerSample.BookingAPI.Data/bin/
 IdentityServerSample.BookingAPI.Data/obj/
 IdentityServerSample.BookingAPI.EDM/bin/
 IdentityServerSample.BookingAPI.EDM/obj/
+*.user

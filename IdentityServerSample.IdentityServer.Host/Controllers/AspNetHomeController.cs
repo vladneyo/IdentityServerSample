@@ -8,7 +8,7 @@ using IdentityServerSample.IdentityServer.Host.Models;
 
 namespace IdentityServerSample.IdentityServer.Host.Controllers
 {
-    public class HomeController : Controller
+    public class AspNetHomeController : Controller
     {
         public IActionResult Index()
         {

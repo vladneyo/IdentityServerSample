@@ -18,18 +18,18 @@ namespace IdentityServerSample.IdentityServer.Host.Controllers
 {
     [Authorize]
     [Route("[controller]/[action]")]
-    public class AccountController : Controller
+    public class AspNetAccountController : Controller
     {
         private readonly UserManager<ApplicationUser> _userManager;
         private readonly SignInManager<ApplicationUser> _signInManager;
         private readonly IEmailSender _emailSender;
         private readonly ILogger _logger;
 
-        public AccountController(
+        public AspNetAccountController(
             UserManager<ApplicationUser> userManager,
             SignInManager<ApplicationUser> signInManager,
             IEmailSender emailSender,
-            ILogger<AccountController> logger)
+            ILogger<AspNetAccountController> logger)
         {
             _userManager = userManager;
             _signInManager = signInManager;
@@ -247,7 +247,7 @@ namespace IdentityServerSample.IdentityServer.Host.Controllers
         {
             await _signInManager.SignOutAsync();
             _logger.LogInformation("User logged out.");
-            return RedirectToAction(nameof(HomeController.Index), "Home");
+            return RedirectToAction(nameof(AspNetHomeController.Index), "Home");
         }
 
         [HttpPost]
@@ -335,7 +335,7 @@ namespace IdentityServerSample.IdentityServer.Host.Controllers
         {
             if (userId == null || code == null)
             {
-                return RedirectToAction(nameof(HomeController.Index), "Home");
+                return RedirectToAction(nameof(AspNetHomeController.Index), "Home");
             }
             var user = await _userManager.FindByIdAsync(userId);
             if (user == null)
@@ -455,7 +455,7 @@ namespace IdentityServerSample.IdentityServer.Host.Controllers
             }
             else
             {
-                return RedirectToAction(nameof(HomeController.Index), "Home");
+                return RedirectToAction(nameof(AspNetHomeController.Index), "Home");
             }
         }
 
