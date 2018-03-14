@@ -66,6 +66,11 @@ namespace IdentityServerSample.BookingAPI
             {
                 app.UseDeveloperExceptionPage();
             }
+            using (var scope = app.ApplicationServices.CreateScope())
+            using (var ctx = scope.ServiceProvider.GetService<BookingContext>())
+            {
+                ctx.Database.EnsureCreated();
+            }
 
             app.UseAuthentication();
 
