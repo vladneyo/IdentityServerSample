@@ -1,7 +1,7 @@
 .vs/
-IdentityServerSample.IdentityServerHost/bin
-IdentityServerSample.IdentityServerHost/obj
-IdentityServerSample.IdentityServerHost/wwwroot/lib/
+IdentityServerSample.IdentityServer.Host/bin
+IdentityServerSample.IdentityServer.Host/obj
+IdentityServerSample.IdentityServer.Host/wwwroot/lib/
 
 IdentityServerSample.BookingAdminPanel/bin/
 IdentityServerSample.BookingAdminPanel/obj/
