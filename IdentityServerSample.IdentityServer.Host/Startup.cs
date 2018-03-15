@@ -1,7 +1,6 @@
 ﻿using IdentityServer4.EntityFramework.DbContexts;
-using IdentityServerSample.IdentityServer.Host.Data;
-using IdentityServerSample.IdentityServer.Host.Models;
-using IdentityServerSample.IdentityServer.Host.Services;
+using IdentityServerSample.IdentityServer.EDM;
+using IdentityServerSample.IdentityServer.EDM.Models;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Identity;
@@ -35,8 +34,6 @@ namespace IdentityServerSample.IdentityServer.Host
             services.AddIdentity<ApplicationUser, IdentityRole>()
                 .AddEntityFrameworkStores<ApplicationDbContext>()
                 .AddDefaultTokenProviders();
-
-            services.AddTransient<IEmailSender, EmailSender>();
 
             services.AddMvc();
 

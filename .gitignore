@@ -28,3 +28,8 @@ IdentityServerSample.BookingAPI.Data/obj/
 IdentityServerSample.BookingAPI.EDM/bin/
 IdentityServerSample.BookingAPI.EDM/obj/
 *.user
+IdentityServerSample.IdentityServer.AdminPanel/obj/
+IdentityServerSample.IdentityServer.AdminPanel/bin/
+IdentityServerSample.IdentityServer.AdminPanel/wwwroot/lib/
+IdentityServerSample.IdentityServer.EDM/obj/
+IdentityServerSample.IdentityServer.EDM/bin/

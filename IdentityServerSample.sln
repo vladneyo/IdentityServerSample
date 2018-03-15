@@ -25,6 +25,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IdentityServerSample.Bookin
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IdentityServerSample.IdentityServer.Host", "IdentityServerSample.IdentityServer.Host\IdentityServerSample.IdentityServer.Host.csproj", "{BDCA120D-3AE6-435F-AFCB-948D0A2DE8D3}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IdentityServerSample.IdentityServer.AdminPanel", "IdentityServerSample.IdentityServer.AdminPanel\IdentityServerSample.IdentityServer.AdminPanel.csproj", "{A4087F45-7297-4738-A2B8-540A39DB47B0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IdentityServerSample.IdentityServer.EDM", "IdentityServerSample.IdentityServer.EDM\IdentityServerSample.IdentityServer.EDM.csproj", "{7AF69C7E-E639-4414-A7F6-86FEB7553555}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -75,6 +79,14 @@ Global
 		{BDCA120D-3AE6-435F-AFCB-948D0A2DE8D3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BDCA120D-3AE6-435F-AFCB-948D0A2DE8D3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BDCA120D-3AE6-435F-AFCB-948D0A2DE8D3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A4087F45-7297-4738-A2B8-540A39DB47B0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A4087F45-7297-4738-A2B8-540A39DB47B0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A4087F45-7297-4738-A2B8-540A39DB47B0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A4087F45-7297-4738-A2B8-540A39DB47B0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7AF69C7E-E639-4414-A7F6-86FEB7553555}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7AF69C7E-E639-4414-A7F6-86FEB7553555}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7AF69C7E-E639-4414-A7F6-86FEB7553555}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7AF69C7E-E639-4414-A7F6-86FEB7553555}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
