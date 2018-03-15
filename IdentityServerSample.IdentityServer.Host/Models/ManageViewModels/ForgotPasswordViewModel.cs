@@ -4,7 +4,7 @@ using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace IdentityServerSample.IdentityServer.Host.Models.AccountViewModels
+namespace IdentityServerSample.IdentityServer.Host.Models.ManageViewModels
 {
     public class ForgotPasswordViewModel
     {
