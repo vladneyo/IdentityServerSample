@@ -2,6 +2,10 @@
   "iisSettings": {
     "windowsAuthentication": false,
     "anonymousAuthentication": true,
+    "iis": {
+      "applicationUrl": "http://localhost/IdentityServerSample.IdentityServer.Host",
+      "sslPort": 0
+    },
     "iisExpress": {
       "applicationUrl": "http://localhost:56341/",
       "sslPort": 0
@@ -17,12 +21,13 @@
       }
     },
     "IdentityServerSample.IdentityServer.Host": {
-      "commandName": "Project",
-      "launchBrowser": true,
-      "environmentVariables": {
-        "ASPNETCORE_ENVIRONMENT": "Development"
-      },
-      "applicationUrl": "http://localhost:56342/"
+        "commandName": "Project",
+        "commandLineArgs": "--seed",
+        "launchBrowser": true,
+        "environmentVariables": {
+            "ASPNETCORE_ENVIRONMENT": "Development"
+        },
+        "applicationUrl": "http://localhost:56342/"
     }
   }
 }

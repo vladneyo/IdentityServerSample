@@ -4,7 +4,7 @@
 
 using Microsoft.AspNetCore;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.Extensions.Logging;
+using Microsoft.Extensions.Configuration;
 using System.Linq;
 
 namespace IdentityServerSample.IdentityServer.Host
@@ -13,16 +13,18 @@ namespace IdentityServerSample.IdentityServer.Host
     {
         public static void Main(string[] args)
         {
-            //var seed = args.Any(x => x == "/seed");
-            //if (seed) args = args.Except(new[] { "/seed" }).ToArray();
+
+            var seed = args.Any(x => x == "--seed");
+            if (seed)
+                args = args.Except(new[] { "--seed" }).ToArray();
 
             var host = BuildWebHost(args);
 
-            //if (seed)
-            //{
-            //    SeedData.EnsureSeedData(host.Services);
-            //    return;
-            //}
+            if (seed)
+            {
+                SeedData.EnsureSeedData(host.Services);
+                return;
+            }
 
             host.Run();
         }

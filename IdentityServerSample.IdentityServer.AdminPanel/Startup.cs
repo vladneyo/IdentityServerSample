@@ -47,7 +47,7 @@ namespace IdentityServerSample.IdentityServer.AdminPanel
                     options.SignInScheme = "Cookies";
                     options.Authority = EndpointsConstants.ISHost;
                     options.RequireHttpsMetadata = false;
-                    options.ClientId = ISClients.BookingAdminPanelClientId;
+                    options.ClientId = ISClients.ISAdminPanelClientId;
                     options.SaveTokens = true;
                 });
 

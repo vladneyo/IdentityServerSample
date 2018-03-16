@@ -27,7 +27,17 @@ namespace IdentityServerSample.IdentityServer.Host
                     ClientSecrets = { new Secret(Secrets.BookingAPI.Sha256())},
                     RequireClientSecret = false,
                     AllowedScopes = { ISApiNames.BookingAPI, StandardScopes.Email, StandardScopes.Profile, StandardScopes.OpenId }
-                }
+                },
+                new Client
+                {
+                    AccessTokenType = AccessTokenType.Jwt,
+                    ClientId = ISClients.ISAdminPanelClientId,
+                    RedirectUris = new string[]{ $"{EndpointsConstants.ISAdminPanel}/signin-oidc" },
+                    PostLogoutRedirectUris = { $"{EndpointsConstants.ISAdminPanel}/signout-callback-oidc" },
+                    ClientName = "Identity Server Admin",
+                    AllowedGrantTypes = GrantTypes.Implicit,
+                    AllowedScopes = { StandardScopes.Email, StandardScopes.Profile, StandardScopes.OpenId }
+                },
             };
         }
 
