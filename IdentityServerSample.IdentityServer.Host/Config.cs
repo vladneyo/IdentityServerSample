@@ -1,5 +1,7 @@
 ﻿using System.Collections.Generic;
+using IdentityModel;
 using IdentityServer4.Models;
+using IdentityServerSample.IdentityServer.Host.Extensions;
 using IdentityServerSample.Shared.Constants;
 using static IdentityServer4.IdentityServerConstants;
 
@@ -36,7 +38,7 @@ namespace IdentityServerSample.IdentityServer.Host
                     PostLogoutRedirectUris = { $"{EndpointsConstants.ISAdminPanel}/signout-callback-oidc" },
                     ClientName = "Identity Server Admin",
                     AllowedGrantTypes = GrantTypes.Implicit,
-                    AllowedScopes = { StandardScopes.Email, StandardScopes.Profile, StandardScopes.OpenId }
+                    AllowedScopes = { StandardScopes.Email, StandardScopes.Profile, StandardScopes.OpenId, ISIdentityResources.Roles },
                 },
             };
         }
@@ -54,7 +56,8 @@ namespace IdentityServerSample.IdentityServer.Host
             return new List<IdentityResource> {
                 new IdentityResources.OpenId(),
                 new IdentityResources.Email(),
-                new IdentityResources.Profile()
+                new IdentityResources.Profile(),
+                new IdentityResource().ToRoles()
             };
         }
     }
