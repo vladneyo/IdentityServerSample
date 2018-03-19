@@ -11,23 +11,23 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "IdentityServerSample.Bookin
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "IdentityServerSample.Shared", "IdentityServerSample.Shared\IdentityServerSample.Shared.csproj", "{31D17798-EA9D-41B1-881D-795679782EE4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IdentityServerSample.BookingAPI.Client", "IdentityServerSample.BookingAPI.Client\IdentityServerSample.BookingAPI.Client.csproj", "{8AE0BBD7-8A91-41EF-A0AB-52DD0C75F14B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "IdentityServerSample.BookingAPI.Client", "IdentityServerSample.BookingAPI.Client\IdentityServerSample.BookingAPI.Client.csproj", "{8AE0BBD7-8A91-41EF-A0AB-52DD0C75F14B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IdentityServerSample.BookingAPI.Data", "IdentityServerSample.BookingAPI.Data\IdentityServerSample.BookingAPI.Data.csproj", "{A2FCB282-B9FD-4EC9-90DB-0E40C806B3B9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "IdentityServerSample.BookingAPI.Data", "IdentityServerSample.BookingAPI.Data\IdentityServerSample.BookingAPI.Data.csproj", "{A2FCB282-B9FD-4EC9-90DB-0E40C806B3B9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IdentityServerSample.BookingAPI.EDM", "IdentityServerSample.BookingAPI.EDM\IdentityServerSample.BookingAPI.EDM.csproj", "{0433042D-99A6-43FE-A7E3-F4038A7C7029}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "IdentityServerSample.BookingAPI.EDM", "IdentityServerSample.BookingAPI.EDM\IdentityServerSample.BookingAPI.EDM.csproj", "{0433042D-99A6-43FE-A7E3-F4038A7C7029}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IdentityServerSample.BookingAPI.Business", "IdentityServerSample.BookingAPI.Business\IdentityServerSample.BookingAPI.Business.csproj", "{08708D75-7146-483F-9829-F816F8FE565E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "IdentityServerSample.BookingAPI.Business", "IdentityServerSample.BookingAPI.Business\IdentityServerSample.BookingAPI.Business.csproj", "{08708D75-7146-483F-9829-F816F8FE565E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IdentityServerSample.BookingAPI.Business.Contracts", "IdentityServerSample.BookingAPI.Business.Contracts\IdentityServerSample.BookingAPI.Business.Contracts.csproj", "{E9812110-61C9-4F17-A564-A8FF97144E3D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "IdentityServerSample.BookingAPI.Business.Contracts", "IdentityServerSample.BookingAPI.Business.Contracts\IdentityServerSample.BookingAPI.Business.Contracts.csproj", "{E9812110-61C9-4F17-A564-A8FF97144E3D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IdentityServerSample.BookingAPI.Data.Contracts", "IdentityServerSample.BookingAPI.Data.Contracts\IdentityServerSample.BookingAPI.Data.Contracts.csproj", "{7B7C16B0-B375-42B7-BD4D-C3B24A0B130C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "IdentityServerSample.BookingAPI.Data.Contracts", "IdentityServerSample.BookingAPI.Data.Contracts\IdentityServerSample.BookingAPI.Data.Contracts.csproj", "{7B7C16B0-B375-42B7-BD4D-C3B24A0B130C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IdentityServerSample.IdentityServer.Host", "IdentityServerSample.IdentityServer.Host\IdentityServerSample.IdentityServer.Host.csproj", "{BDCA120D-3AE6-435F-AFCB-948D0A2DE8D3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "IdentityServerSample.IdentityServer.Host", "IdentityServerSample.IdentityServer.Host\IdentityServerSample.IdentityServer.Host.csproj", "{BDCA120D-3AE6-435F-AFCB-948D0A2DE8D3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IdentityServerSample.IdentityServer.AdminPanel", "IdentityServerSample.IdentityServer.AdminPanel\IdentityServerSample.IdentityServer.AdminPanel.csproj", "{A4087F45-7297-4738-A2B8-540A39DB47B0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "IdentityServerSample.IdentityServer.EDM", "IdentityServerSample.IdentityServer.EDM\IdentityServerSample.IdentityServer.EDM.csproj", "{7AF69C7E-E639-4414-A7F6-86FEB7553555}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IdentityServerSample.IdentityServer.EDM", "IdentityServerSample.IdentityServer.EDM\IdentityServerSample.IdentityServer.EDM.csproj", "{7AF69C7E-E639-4414-A7F6-86FEB7553555}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IdentityServerSample.IdentityServer.AdminPanel", "IdentityServerSample.IdentityServer.AdminPanel\IdentityServerSample.IdentityServer.AdminPanel.csproj", "{7BCD0DC7-D2E1-471B-B443-9BB1CC9E0CEB}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -79,14 +79,14 @@ Global
 		{BDCA120D-3AE6-435F-AFCB-948D0A2DE8D3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BDCA120D-3AE6-435F-AFCB-948D0A2DE8D3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BDCA120D-3AE6-435F-AFCB-948D0A2DE8D3}.Release|Any CPU.Build.0 = Release|Any CPU
-		{A4087F45-7297-4738-A2B8-540A39DB47B0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{A4087F45-7297-4738-A2B8-540A39DB47B0}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{A4087F45-7297-4738-A2B8-540A39DB47B0}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{A4087F45-7297-4738-A2B8-540A39DB47B0}.Release|Any CPU.Build.0 = Release|Any CPU
 		{7AF69C7E-E639-4414-A7F6-86FEB7553555}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{7AF69C7E-E639-4414-A7F6-86FEB7553555}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7AF69C7E-E639-4414-A7F6-86FEB7553555}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7AF69C7E-E639-4414-A7F6-86FEB7553555}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7BCD0DC7-D2E1-471B-B443-9BB1CC9E0CEB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7BCD0DC7-D2E1-471B-B443-9BB1CC9E0CEB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7BCD0DC7-D2E1-471B-B443-9BB1CC9E0CEB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7BCD0DC7-D2E1-471B-B443-9BB1CC9E0CEB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -13,7 +13,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\IdentityServerSample.IdentityServer.EDM\IdentityServerSample.IdentityServer.EDM.csproj" />
     <ProjectReference Include="..\IdentityServerSample.Shared\IdentityServerSample.Shared.csproj" />
   </ItemGroup>
 

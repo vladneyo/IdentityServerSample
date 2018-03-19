@@ -56,9 +56,6 @@ namespace IdentityServerSample.IdentityServer.Host
                     options.ConfigureDbContext = b =>
                         b.UseSqlServer(connectionString,
                             sql => sql.MigrationsAssembly(migrationsAssembly));
-
-                    options.EnableTokenCleanup = true;
-                    options.TokenCleanupInterval = 30;
                 })
                 .AddAspNetIdentity<ApplicationUser>();
 
