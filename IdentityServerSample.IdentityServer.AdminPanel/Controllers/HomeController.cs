@@ -1,12 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Diagnostics;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using System.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
 using IdentityServerSample.IdentityServer.AdminPanel.Models;
-using Microsoft.AspNetCore.Authorization;
-using IdentityServerSample.Shared.Constants;
 
 namespace IdentityServerSample.IdentityServer.AdminPanel.Controllers
 {
@@ -18,7 +12,6 @@ namespace IdentityServerSample.IdentityServer.AdminPanel.Controllers
             return View();
         }
 
-        [Authorize(ISRoles.Admin)]
         public IActionResult About()
         {
             ViewData["Message"] = "Your application description page.";

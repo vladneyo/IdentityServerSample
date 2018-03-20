@@ -1,12 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.IdentityModel.Tokens.Jwt;
-using System.Linq;
-using System.Threading.Tasks;
 using IdentityServerSample.Shared.Constants;
 using IdentityServerSample.Shared.Utils;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Mvc.Authorization;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.IdentityModel.Tokens;
@@ -24,7 +23,15 @@ namespace IdentityServerSample.IdentityServer.AdminPanel
 
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddMvc();
+            var ISAdminPolicy = new AuthorizationPolicyBuilder()
+                     .RequireAuthenticatedUser()
+                     .RequireClaim("role", ISRoles.Admin)
+                     .Build();
+
+            services.AddMvc(config => 
+            {
+                config.Filters.Add(new AuthorizeFilter(ISAdminPolicy));
+            });
 
             JwtSecurityTokenHandler.DefaultInboundClaimTypeMap.Clear();
 
@@ -60,10 +67,7 @@ namespace IdentityServerSample.IdentityServer.AdminPanel
 
             services.AddAuthorization(options =>
             {
-                options.AddPolicy(ISRoles.Admin, policyAdmin =>
-                {
-                    policyAdmin.RequireClaim("role", ISRoles.Admin);
-                });
+                options.DefaultPolicy = ISAdminPolicy;
             });
         }
 
