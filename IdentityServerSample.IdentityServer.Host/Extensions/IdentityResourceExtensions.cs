@@ -16,5 +16,13 @@ namespace IdentityServerSample.IdentityServer.Host.Extensions
             ir.UserClaims = new[] { JwtClaimTypes.Role };
             return ir;
         }
+
+        public static IdentityResource ToScopes(this IdentityResource ir)
+        {
+            ir.Name = ISIdentityResources.Scopes;
+            ir.DisplayName = "Your user scope";
+            ir.UserClaims = new[] { JwtClaimTypes.Scope };
+            return ir;
+        }
     }
 }

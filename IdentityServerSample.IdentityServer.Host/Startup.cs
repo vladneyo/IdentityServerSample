@@ -1,6 +1,7 @@
 ﻿using IdentityServer4.EntityFramework.DbContexts;
 using IdentityServerSample.IdentityServer.EDM;
 using IdentityServerSample.IdentityServer.EDM.Models;
+using IdentityServerSample.IdentityServer.Host.Services;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Identity;
@@ -58,6 +59,7 @@ namespace IdentityServerSample.IdentityServer.Host
                             sql => sql.MigrationsAssembly(migrationsAssembly));
                 })
                 .AddAspNetIdentity<ApplicationUser>();
+                //.AddProfileService<CustomProfileService>();
 
             if (Environment.IsDevelopment())
             {

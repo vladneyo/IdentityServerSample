@@ -53,11 +53,13 @@ namespace IdentityServerSample.IdentityServer.AdminPanel
 
                     options.Scope.Add("openid");
                     options.Scope.Add("profile");
-                    options.Scope.Add("roles");
+                    options.Scope.Add(ISIdentityResources.Roles);
+                    options.Scope.Add(ISIdentityResources.Scopes);
 
                     options.TokenValidationParameters = new TokenValidationParameters() { RoleClaimType = "role", NameClaimType = "name" };
 
                     options.ClaimActions.Add(new JsonKeyArrayClaimAction("role", "role", "role"));
+                    options.ClaimActions.Add(new JsonKeyArrayClaimAction("scope", "scope", "scope"));
                     options.SecurityTokenValidator = new JwtSecurityTokenHandler
                     {
                         InboundClaimTypeMap = new Dictionary<string, string>()
