@@ -20,7 +20,7 @@ namespace IdentityServerSample.IdentityServer.Host
                     PostLogoutRedirectUris = { $"{EndpointsConstants.BookingAdminPanel}/signout-callback-oidc" },
                     ClientName = "Booking Admin",
                     AllowedGrantTypes = GrantTypes.Implicit,
-                    AllowedScopes = { StandardScopes.Email, StandardScopes.Profile, StandardScopes.OpenId, ISIdentityResources.Roles, ISIdentityResources.Scopes }
+                    AllowedScopes = { StandardScopes.Email, StandardScopes.Profile, StandardScopes.OpenId, ISIdentityResources.Roles, ISIdentityResources.AppScopes }
                 },
                 new Client
                 {
@@ -28,7 +28,7 @@ namespace IdentityServerSample.IdentityServer.Host
                     AllowedGrantTypes = GrantTypes.ClientCredentials,
                     ClientSecrets = { new Secret(Secrets.BookingAPI.Sha256())},
                     RequireClientSecret = false,
-                    AllowedScopes = { ISApiNames.BookingAPI, StandardScopes.Email, StandardScopes.Profile, StandardScopes.OpenId, ISIdentityResources.Roles, ISIdentityResources.Scopes }
+                    AllowedScopes = { ISApiNames.BookingAPI, StandardScopes.Email, StandardScopes.Profile, StandardScopes.OpenId, ISIdentityResources.Roles, ISIdentityResources.AppScopes }
                 },
                 new Client
                 {
@@ -38,7 +38,7 @@ namespace IdentityServerSample.IdentityServer.Host
                     PostLogoutRedirectUris = { $"{EndpointsConstants.ISAdminPanel}/signout-callback-oidc" },
                     ClientName = "Identity Server Admin",
                     AllowedGrantTypes = GrantTypes.Implicit,
-                    AllowedScopes = { StandardScopes.Email, StandardScopes.Profile, StandardScopes.OpenId, ISIdentityResources.Roles, ISIdentityResources.Scopes },
+                    AllowedScopes = { StandardScopes.Email, StandardScopes.Profile, StandardScopes.OpenId, ISIdentityResources.Roles, ISIdentityResources.AppScopes },
                 },
             };
         }
@@ -58,7 +58,7 @@ namespace IdentityServerSample.IdentityServer.Host
                 new IdentityResources.Email(),
                 new IdentityResources.Profile(),
                 new IdentityResource().ToRoles(),
-                new IdentityResource().ToScopes()
+                new IdentityResource().ToAppScopes()
             };
         }
     }

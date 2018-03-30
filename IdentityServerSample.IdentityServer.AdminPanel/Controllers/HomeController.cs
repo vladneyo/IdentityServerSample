@@ -1,14 +1,20 @@
 ﻿using System.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
 using IdentityServerSample.IdentityServer.AdminPanel.Models;
+using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authentication;
 
 namespace IdentityServerSample.IdentityServer.AdminPanel.Controllers
 {
     public class HomeController : Controller
     {
-        public IActionResult Index()
+        public async Task<IActionResult> Index()
         {
             var a = User;
+
+            string accessToken = await HttpContext.GetTokenAsync("access_token");
+            string idToken = await HttpContext.GetTokenAsync("id_token");
+
             return View();
         }
 

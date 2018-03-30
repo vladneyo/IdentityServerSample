@@ -17,11 +17,11 @@ namespace IdentityServerSample.IdentityServer.Host.Extensions
             return ir;
         }
 
-        public static IdentityResource ToScopes(this IdentityResource ir)
+        public static IdentityResource ToAppScopes(this IdentityResource ir)
         {
-            ir.Name = ISIdentityResources.Scopes;
-            ir.DisplayName = "Your user scope";
-            ir.UserClaims = new[] { JwtClaimTypes.Scope };
+            ir.Name = ISIdentityResources.AppScopes;
+            ir.DisplayName = "Your application scope";
+            ir.UserClaims = new[] { UserClaims.AppScope };
             return ir;
         }
     }

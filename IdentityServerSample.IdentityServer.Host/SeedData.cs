@@ -85,8 +85,7 @@ namespace IdentityServerSample.IdentityServer.Host
                             new Claim(JwtClaimTypes.Email, "isadmin@mail.com"),
                             new Claim(JwtClaimTypes.EmailVerified, "true", System.Security.Claims.ClaimValueTypes.Boolean),
                             new Claim(JwtClaimTypes.Role, ISRoles.Admin),
-                            new Claim(JwtClaimTypes.Scope, $"{StandardScopes.OpenId} {StandardScopes.Email} {JwtClaimTypes.Name} " +
-                                $"{JwtClaimTypes.Role} {ISClients.ISAdminPanelClientId}")
+                            new Claim(UserClaims.AppScope, $"{ISClients.ISAdminPanelClientId}")
                         }).Result;
 
                         if (!result.Succeeded)
@@ -140,9 +139,7 @@ namespace IdentityServerSample.IdentityServer.Host
                             new Claim(JwtClaimTypes.Email, "bookingadmin@mail.com"),
                             new Claim(JwtClaimTypes.EmailVerified, "true", System.Security.Claims.ClaimValueTypes.Boolean),
                             new Claim(JwtClaimTypes.Role, BookingRoles.Admin),
-                            new Claim(JwtClaimTypes.Scope, $"{StandardScopes.OpenId} {StandardScopes.Email} " +
-                                $"{JwtClaimTypes.Name} {JwtClaimTypes.Role} " +
-                                $"{ISClients.BookingAdminPanelClientId} {ISClients.BookingAPIClientId}")
+                            new Claim(UserClaims.AppScope, $"{ISClients.BookingAdminPanelClientId} {ISClients.BookingAPIClientId}")
                         }).Result;
 
                         if (!result.Succeeded)

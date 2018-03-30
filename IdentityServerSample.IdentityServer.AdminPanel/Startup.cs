@@ -1,14 +1,12 @@
-﻿using System.Collections.Generic;
-using System.IdentityModel.Tokens.Jwt;
+﻿using System.IdentityModel.Tokens.Jwt;
 using IdentityServerSample.Shared.Constants;
-using IdentityServerSample.Shared.Utils;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc.Authorization;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using Microsoft.IdentityModel.Tokens;
+using System.Linq;
 
 namespace IdentityServerSample.IdentityServer.AdminPanel
 {
@@ -26,6 +24,10 @@ namespace IdentityServerSample.IdentityServer.AdminPanel
             var ISAdminPolicy = new AuthorizationPolicyBuilder()
                      .RequireAuthenticatedUser()
                      .RequireClaim("role", ISRoles.Admin)
+                     .RequireAssertion(ctx => ctx.User.Claims
+                            .FirstOrDefault(x => x.Type == UserClaims.AppScope)?.Value
+                            .Contains(ISClients.ISAdminPanelClientId) 
+                            ?? false)
                      .Build();
 
             services.AddMvc(config => 
@@ -40,7 +42,10 @@ namespace IdentityServerSample.IdentityServer.AdminPanel
                     options.DefaultScheme = "Cookies";
                     options.DefaultChallengeScheme = "oidc";
                 })
-                .AddCookie("Cookies")
+                .AddCookie("Cookies", options =>
+                {
+                    options.AccessDeniedPath = "/Account/AccessDenied";
+                })
                 .AddOpenIdConnect("oidc", options =>
                 {
                     options.SignInScheme = "Cookies";
@@ -51,20 +56,11 @@ namespace IdentityServerSample.IdentityServer.AdminPanel
 
                     options.GetClaimsFromUserInfoEndpoint = true;
 
+                    options.Scope.Clear();
                     options.Scope.Add("openid");
                     options.Scope.Add("profile");
                     options.Scope.Add(ISIdentityResources.Roles);
-                    options.Scope.Add(ISIdentityResources.Scopes);
-
-                    options.TokenValidationParameters = new TokenValidationParameters() { RoleClaimType = "role", NameClaimType = "name" };
-
-                    options.ClaimActions.Add(new JsonKeyArrayClaimAction("role", "role", "role"));
-                    options.ClaimActions.Add(new JsonKeyArrayClaimAction("scope", "scope", "scope"));
-                    options.SecurityTokenValidator = new JwtSecurityTokenHandler
-                    {
-                        InboundClaimTypeMap = new Dictionary<string, string>()
-                    };
-                    
+                    options.Scope.Add(ISIdentityResources.AppScopes);                    
                 });
 
             services.AddAuthorization(options =>
