@@ -27,7 +27,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "IdentityServerSample.Identi
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "IdentityServerSample.IdentityServer.EDM", "IdentityServerSample.IdentityServer.EDM\IdentityServerSample.IdentityServer.EDM.csproj", "{7AF69C7E-E639-4414-A7F6-86FEB7553555}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IdentityServerSample.IdentityServer.AdminPanel", "IdentityServerSample.IdentityServer.AdminPanel\IdentityServerSample.IdentityServer.AdminPanel.csproj", "{7BCD0DC7-D2E1-471B-B443-9BB1CC9E0CEB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "IdentityServerSample.IdentityServer.AdminPanel", "IdentityServerSample.IdentityServer.AdminPanel\IdentityServerSample.IdentityServer.AdminPanel.csproj", "{7BCD0DC7-D2E1-471B-B443-9BB1CC9E0CEB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IdentityServerSample.IdentityServer.AdminPanel.Business", "IdentityServerSample.IdentityServer.AdminPanel.Business\IdentityServerSample.IdentityServer.AdminPanel.Business.csproj", "{8DBAA00B-AFFE-4557-A8E1-310577980301}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IdentityServerSample.IdentityServer.AdminPanel.Data", "IdentityServerSample.IdentityServer.AdminPanel.Data\IdentityServerSample.IdentityServer.AdminPanel.Data.csproj", "{2168F696-9934-4E26-9370-FBC64E1C9445}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -87,6 +91,14 @@ Global
 		{7BCD0DC7-D2E1-471B-B443-9BB1CC9E0CEB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7BCD0DC7-D2E1-471B-B443-9BB1CC9E0CEB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7BCD0DC7-D2E1-471B-B443-9BB1CC9E0CEB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8DBAA00B-AFFE-4557-A8E1-310577980301}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8DBAA00B-AFFE-4557-A8E1-310577980301}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8DBAA00B-AFFE-4557-A8E1-310577980301}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8DBAA00B-AFFE-4557-A8E1-310577980301}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2168F696-9934-4E26-9370-FBC64E1C9445}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2168F696-9934-4E26-9370-FBC64E1C9445}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2168F696-9934-4E26-9370-FBC64E1C9445}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2168F696-9934-4E26-9370-FBC64E1C9445}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

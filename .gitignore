@@ -33,3 +33,7 @@ IdentityServerSample.IdentityServer.AdminPanel/bin/
 IdentityServerSample.IdentityServer.AdminPanel/wwwroot/lib/
 IdentityServerSample.IdentityServer.EDM/obj/
 IdentityServerSample.IdentityServer.EDM/bin/
+IdentityServerSample.IdentityServer.AdminPanel.Business/bin/
+IdentityServerSample.IdentityServer.AdminPanel.Business/obj/
+IdentityServerSample.IdentityServer.AdminPanel.Data/bin/
+IdentityServerSample.IdentityServer.AdminPanel.Data/obj/

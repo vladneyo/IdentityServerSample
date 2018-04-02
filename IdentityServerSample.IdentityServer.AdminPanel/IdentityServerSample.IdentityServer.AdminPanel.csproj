@@ -14,6 +14,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\IdentityServerSample.IdentityServer.AdminPanel.Business\IdentityServerSample.IdentityServer.AdminPanel.Business.csproj" />
     <ProjectReference Include="..\IdentityServerSample.Shared\IdentityServerSample.Shared.csproj" />
   </ItemGroup>
 
