@@ -13,6 +13,7 @@ namespace IdentityServerSample.IdentityServer.AdminPanel.Business
         {
             ctx = applicationDbContext;
         }
+
         public List<ApplicationUser> GetAll()
         {
             return ctx.Users.ToList();

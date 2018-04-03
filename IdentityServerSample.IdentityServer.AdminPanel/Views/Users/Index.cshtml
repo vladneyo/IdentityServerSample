@@ -1,0 +1,16 @@
+﻿@model List<IdentityServerSample.IdentityServer.EDM.Models.ApplicationUser>
+
+@{
+    ViewData["Title"] = "Users";
+}
+
+<h2>Users</h2>
+
+<ul>
+    @foreach (var user in Model)
+    {
+        <li>@user.UserName</li>
+    }
+</ul>
+
+

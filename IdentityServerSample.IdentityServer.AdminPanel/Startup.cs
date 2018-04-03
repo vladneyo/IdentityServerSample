@@ -7,6 +7,9 @@ using Microsoft.AspNetCore.Mvc.Authorization;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using System.Linq;
+using IdentityServerSample.IdentityServer.AdminPanel.Business;
+using IdentityServerSample.IdentityServer.EDM;
+using Microsoft.EntityFrameworkCore;
 
 namespace IdentityServerSample.IdentityServer.AdminPanel
 {
@@ -29,6 +32,8 @@ namespace IdentityServerSample.IdentityServer.AdminPanel
                             .Contains(ISClients.ISAdminPanelClientId) 
                             ?? false)
                      .Build();
+
+            var connectionString = Configuration.GetConnectionString("IdentityServerHostDb");
 
             services.AddMvc(config => 
             {
@@ -67,6 +72,10 @@ namespace IdentityServerSample.IdentityServer.AdminPanel
             {
                 options.DefaultPolicy = ISAdminPolicy;
             });
+
+            services.AddDbContext<ApplicationDbContext>(options => options.UseSqlServer(connectionString));
+
+            services.AddTransient(typeof(IUsersLogic), x => new UsersLogic(x.GetService<ApplicationDbContext>()));
         }
 
         public void Configure(IApplicationBuilder app, IHostingEnvironment env)

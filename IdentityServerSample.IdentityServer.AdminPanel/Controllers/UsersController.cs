@@ -11,15 +11,15 @@ namespace IdentityServerSample.IdentityServer.AdminPanel.Controllers
     {
         readonly IUsersLogic _usersLogic;
 
-        UsersController(IUsersLogic usersLogic)
+        public UsersController(IUsersLogic usersLogic)
         {
             _usersLogic = usersLogic;
         }
 
         public IActionResult Index()
         {
-            _usersLogic.GetAll();
-            return View();
+            //_usersLogic.GetAll();
+            return View(_usersLogic.GetAll());
         }
     }
 }
