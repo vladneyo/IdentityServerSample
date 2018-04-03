@@ -1,10 +1,10 @@
 ﻿using System.Collections.Generic;
-using IdentityServerSample.IdentityServer.EDM.Models;
+using IdentityServerSample.IdentityServer.AdminPanel.Data.Dtos;
 
 namespace IdentityServerSample.IdentityServer.AdminPanel.Business
 {
     public interface IUsersLogic
     {
-        List<ApplicationUser> GetAll();
+        List<UserDto> GetAll();
     }
 }

@@ -18,7 +18,6 @@ namespace IdentityServerSample.IdentityServer.AdminPanel.Controllers
 
         public IActionResult Index()
         {
-            //_usersLogic.GetAll();
             return View(_usersLogic.GetAll());
         }
     }

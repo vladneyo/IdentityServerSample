@@ -1,4 +1,4 @@
-﻿@model List<IdentityServerSample.IdentityServer.EDM.Models.ApplicationUser>
+﻿@model List<IdentityServerSample.IdentityServer.AdminPanel.Data.Dtos.UserDto>
 
 @{
     ViewData["Title"] = "Users";
@@ -9,7 +9,14 @@
 <ul>
     @foreach (var user in Model)
     {
-        <li>@user.UserName</li>
+        <li>@user.UserName
+            <ul>
+                @foreach(var claim in user.Claims)
+                {
+                    <li>@claim.Type - @claim.Value</li>
+                }
+            </ul>
+        </li>
     }
 </ul>
 
