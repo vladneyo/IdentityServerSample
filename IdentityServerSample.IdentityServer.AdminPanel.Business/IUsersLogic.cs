@@ -6,5 +6,7 @@ namespace IdentityServerSample.IdentityServer.AdminPanel.Business
     public interface IUsersLogic
     {
         List<UserDto> GetAll();
+
+        UserDto Get(string id);
     }
 }

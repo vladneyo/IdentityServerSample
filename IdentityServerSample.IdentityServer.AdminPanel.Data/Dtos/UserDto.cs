@@ -7,8 +7,10 @@ namespace IdentityServerSample.IdentityServer.AdminPanel.Data.Dtos
 {
     public class UserDto
     {
+        public string Id { get; set; }
+
         public string UserName { get; set; }
 
-        public List<Claim> Claims { get; set; }
+        public Dictionary<int, Claim> Claims { get; set; }
     }
 }

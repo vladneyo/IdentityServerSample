@@ -9,13 +9,14 @@
 <ul>
     @foreach (var user in Model)
     {
-        <li>@user.UserName
+        <li>@user.Id - @user.UserName
             <ul>
                 @foreach(var claim in user.Claims)
                 {
-                    <li>@claim.Type - @claim.Value</li>
+                    <li>@claim.Value.Type - @claim.Value.Value</li>
                 }
             </ul>
+            <a asp-action="Edit" asp-controller="Users" asp-route-id="@user.Id">Edit</a>
         </li>
     }
 </ul>
