@@ -6,17 +6,12 @@
 
 <h2>Users</h2>
 
-<ul>
+<ul class="list-group">
     @foreach (var user in Model)
     {
-        <li>@user.Id - @user.UserName
-            <ul>
-                @foreach(var claim in user.Claims)
-                {
-                    <li>@claim.Value.Type - @claim.Value.Value</li>
-                }
-            </ul>
-            <a asp-action="Edit" asp-controller="Users" asp-route-id="@user.Id">Edit</a>
+        <li class="list-group-item container">
+            <span class="pull-left">@user.Id - @user.UserName</span>
+            <a asp-action="Edit" asp-controller="Users" asp-route-id="@user.Id" class="btn btn-default pull-right">Edit</a>
         </li>
     }
 </ul>

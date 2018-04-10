@@ -10,6 +10,7 @@ using System.Linq;
 using IdentityServerSample.IdentityServer.AdminPanel.Business;
 using IdentityServerSample.IdentityServer.EDM;
 using Microsoft.EntityFrameworkCore;
+using IdentityServerSample.IdentityServer.AdminPanel.Binders;
 
 namespace IdentityServerSample.IdentityServer.AdminPanel
 {
@@ -38,6 +39,7 @@ namespace IdentityServerSample.IdentityServer.AdminPanel
             services.AddMvc(config => 
             {
                 config.Filters.Add(new AuthorizeFilter(ISAdminPolicy));
+                config.ModelBinderProviders.Insert(0, new UserEditViewModelBinderProvider());
             });
 
             JwtSecurityTokenHandler.DefaultInboundClaimTypeMap.Clear();
