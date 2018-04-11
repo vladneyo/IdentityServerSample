@@ -13,6 +13,8 @@ using Microsoft.EntityFrameworkCore;
 using IdentityServerSample.IdentityServer.AdminPanel.Binders;
 using AutoMapper;
 using IdentityServerSample.IdentityServer.AdminPanel.Business.AutoMapper.Profiles;
+using IdentityServer4.EntityFramework.DbContexts;
+using IdentityServer4.EntityFramework.Options;
 
 namespace IdentityServerSample.IdentityServer.AdminPanel
 {
@@ -32,13 +34,13 @@ namespace IdentityServerSample.IdentityServer.AdminPanel
                      .RequireClaim("role", ISRoles.Admin)
                      .RequireAssertion(ctx => ctx.User.Claims
                             .FirstOrDefault(x => x.Type == UserClaims.AppScope)?.Value
-                            .Contains(ISClients.ISAdminPanelClientId) 
+                            .Contains(ISClients.ISAdminPanelClientId)
                             ?? false)
                      .Build();
 
             var connectionString = Configuration.GetConnectionString("IdentityServerHostDb");
 
-            services.AddMvc(config => 
+            services.AddMvc(config =>
             {
                 config.Filters.Add(new AuthorizeFilter(ISAdminPolicy));
                 config.ModelBinderProviders.Insert(0, new UserEditViewModelBinderProvider());
@@ -69,7 +71,7 @@ namespace IdentityServerSample.IdentityServer.AdminPanel
                     options.Scope.Add("openid");
                     options.Scope.Add("profile");
                     options.Scope.Add(ISIdentityResources.Roles);
-                    options.Scope.Add(ISIdentityResources.AppScopes);                    
+                    options.Scope.Add(ISIdentityResources.AppScopes);
                 });
 
             services.AddAuthorization(options =>
@@ -77,11 +79,13 @@ namespace IdentityServerSample.IdentityServer.AdminPanel
                 options.DefaultPolicy = ISAdminPolicy;
             });
 
-            services.AddDbContext<ApplicationDbContext>(options => options.UseSqlServer(connectionString));
-
             services.AddTransient(typeof(IUsersLogic), x => new UsersLogic(x.GetService<ApplicationDbContext>()));
+            services.AddTransient(typeof(ConfigurationStoreOptions), x => new ConfigurationStoreOptions());
 
-            services.AddAutoMapper(config => 
+            services.AddDbContext<ApplicationDbContext>(options => options.UseSqlServer(connectionString));
+            services.AddDbContext<ConfigurationDbContext>(options => options.UseSqlServer(connectionString));
+
+            services.AddAutoMapper(config =>
             {
                 config.AddProfile<UserProfile>();
             });
