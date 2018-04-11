@@ -11,6 +11,8 @@ using IdentityServerSample.IdentityServer.AdminPanel.Business;
 using IdentityServerSample.IdentityServer.EDM;
 using Microsoft.EntityFrameworkCore;
 using IdentityServerSample.IdentityServer.AdminPanel.Binders;
+using AutoMapper;
+using IdentityServerSample.IdentityServer.AdminPanel.Business.AutoMapper.Profiles;
 
 namespace IdentityServerSample.IdentityServer.AdminPanel
 {
@@ -78,6 +80,11 @@ namespace IdentityServerSample.IdentityServer.AdminPanel
             services.AddDbContext<ApplicationDbContext>(options => options.UseSqlServer(connectionString));
 
             services.AddTransient(typeof(IUsersLogic), x => new UsersLogic(x.GetService<ApplicationDbContext>()));
+
+            services.AddAutoMapper(config => 
+            {
+                config.AddProfile<UserProfile>();
+            });
         }
 
         public void Configure(IApplicationBuilder app, IHostingEnvironment env)

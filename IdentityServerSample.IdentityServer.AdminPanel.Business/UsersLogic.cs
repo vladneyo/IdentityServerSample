@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 using System.Security.Claims;
+using AutoMapper;
 using IdentityServerSample.IdentityServer.AdminPanel.Data.Dtos;
 using IdentityServerSample.IdentityServer.EDM;
 using IdentityServerSample.IdentityServer.EDM.Models;
@@ -43,6 +44,26 @@ namespace IdentityServerSample.IdentityServer.AdminPanel.Business
                     Claims = g.Select(x => x.Claim).ToDictionary(x => x.Id, y => y.ToClaim())
                 })
                 .First(x => x.Id == id);
+        }
+
+        public UserDto Update(UserDto model)
+        {
+            var user = Mapper.Map<ApplicationUser>(model);
+            _ctx.Entry<ApplicationUser>(user).Property(x => x.UserName).IsModified = true;
+            _ctx.Attach<ApplicationUser>(user);
+
+            var identityClaims = new List<IdentityUserClaim<string>>();
+            model.Claims.ToList().ForEach(x => 
+            {
+                var claim = new IdentityUserClaim<string>();
+                claim.InitializeFromClaim(x.Value);
+                claim.Id = x.Key;
+                claim.UserId = model.Id;
+                identityClaims.Add(claim);
+            });
+            _ctx.UserClaims.UpdateRange(identityClaims);
+            _ctx.SaveChanges();
+            return model;
         }
     }
 }

@@ -43,6 +43,7 @@ namespace IdentityServerSample.IdentityServer.AdminPanel.Controllers
             user.Id = model.Id;
             user.UserName = model.UserName;
             user.Claims = model.Claims.Select(x => new KeyValuePair<int, Claim>(x.Id, new Claim(x.Type, x.Value))).ToDictionary(x => x.Key, y => y.Value);
+            _usersLogic.Update(user);
             return Redirect("~/Users/");
         }
     }

@@ -8,5 +8,7 @@ namespace IdentityServerSample.IdentityServer.AdminPanel.Business
         List<UserDto> GetAll();
 
         UserDto Get(string id);
+
+        UserDto Update(UserDto user);
     }
 }
