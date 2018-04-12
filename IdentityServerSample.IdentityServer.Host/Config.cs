@@ -28,6 +28,7 @@ namespace IdentityServerSample.IdentityServer.Host
                     AllowedGrantTypes = GrantTypes.ClientCredentials,
                     ClientSecrets = { new Secret(Secrets.BookingAPI.Sha256())},
                     RequireClientSecret = false,
+                    ClientName = "Booking API Client",
                     AllowedScopes = { ISApiNames.BookingAPI, StandardScopes.Email, StandardScopes.Profile, StandardScopes.OpenId, ISIdentityResources.Roles, ISIdentityResources.AppScopes }
                 },
                 new Client

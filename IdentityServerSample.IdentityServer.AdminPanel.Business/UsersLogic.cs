@@ -1,6 +1,5 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
-using System.Security.Claims;
 using AutoMapper;
 using IdentityServerSample.IdentityServer.AdminPanel.Data.Dtos;
 using IdentityServerSample.IdentityServer.EDM;

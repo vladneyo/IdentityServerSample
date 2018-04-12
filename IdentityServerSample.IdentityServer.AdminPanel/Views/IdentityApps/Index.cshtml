@@ -1,0 +1,20 @@
+﻿@model List<IdentityServerSample.IdentityServer.AdminPanel.Models.IdentityAppViewModel>
+
+@{
+    ViewData["Title"] = "Identity Server Applications";
+}
+
+<h2>Identity Server Applications</h2>
+
+<ul class="list-group">
+    @foreach (var app in Model)
+    {
+        <li class="list-group-item container">
+            <span class="col-sm-1">@app.Id</span>
+            <span class="col-sm-5">@app.DisplayName</span>
+            <span class="col-sm-3">@app.Name</span>
+            <span class="col-sm-3">@app.Type</span>
+        </li>
+    }
+</ul>
+
